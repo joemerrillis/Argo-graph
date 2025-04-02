@@ -1,1 +1,17 @@
-# Placeholder content for zep.yaml.example
+server:
+  host: 0.0.0.0
+  port: 8000
+
+vectorstore:
+  type: inmem
+
+memory:
+  type: redis
+  redis:
+    address: "localhost:6379"
+    password: ""
+    db: 0
+
+storage:
+  sqlite:
+    path: "./zep.db"
