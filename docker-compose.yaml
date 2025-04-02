@@ -1,1 +1,17 @@
-# Placeholder content for docker-compose.yaml
+version: '3.8'
+
+services:
+  zep:
+    image: ghcr.io/getzep/zep:latest
+    container_name: zep
+    ports:
+      - "8000:8000"
+    volumes:
+      - zep_data:/data
+    environment:
+      - ZEP_API_KEY=z_1dWlkIjoiMTUxMzA1YmMtYWRlOS00YWRjLWFhZmYtN2NjM2FhODlkZWVjIn0.IKcMUgo3savI0z6c3QXoYILxeW_JchGUz78PuNYD5QG55K7Qk2NeD9W64izBNgFfY3MRXXRVvUvTanubIRLYGQ
+      - ZEP_SERVER_HOST=0.0.0.0
+      - ZEP_SERVER_PORT=8000
+
+volumes:
+  zep_data:
