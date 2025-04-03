@@ -1,17 +1,18 @@
 server:
   host: 0.0.0.0
   port: 8000
-
-vectorstore:
-  type: inmem
+  timeout: 30s
 
 memory:
-  type: redis
-  redis:
-    address: "localhost:6379"
-    password: ""
-    db: 0
+  summarization_enabled: true
+  summarization_max_tokens: 1024
+  embedding_enabled: true
+  embedding_model: openai
 
-storage:
-  sqlite:
-    path: "./zep.db"
+postgres:
+  dsn: ${ZEP_DATABASE_URL}
+  pool_size: 10
+
+auth:
+  api_keys:
+    - ${ZEP_API_KEY}
