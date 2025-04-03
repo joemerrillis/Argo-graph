@@ -10,4 +10,4 @@ ENV ZEP_SERVER_PORT=8000
 EXPOSE 8000
 
 # Start the Zep server
-CMD ["zep"]
+CMD ["zep", "server", "--config", "/app/zep.yaml"]
